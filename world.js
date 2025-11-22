@@ -1,0 +1,19 @@
+document.addEventListener("DOMContentLoaded", function(){
+    btn = document.querySelector("button.lookup");
+    div = document.querySelector("div#result");
+
+    btn.addEventListener("click", function(){
+        //Fetch data from AJAX using XMLHttpRequest object
+        var request = new XMLHttpRequest();
+        request.open("GET","world.php?country=" + input,true);
+        request.send();
+
+        //Checks if the requested document is ready and sets alert
+        request.onreadystatechange = function(){
+            if (this.readyState === 4 && this.status === 200){
+                var res = request.responseText;
+                div.textContent = text;
+            }
+        }         
+    });
+});
