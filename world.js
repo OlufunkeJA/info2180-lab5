@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(){
-    btn = document.querySelector("button.lookup");
+    btn = document.querySelector("button#lookup");
     div = document.querySelector("div#result");
 
     btn.addEventListener("click", function(){
         //Fetch data from AJAX using XMLHttpRequest object
         var request = new XMLHttpRequest();
+        var input = document.querySelector("input").value;
         request.open("GET","world.php?country=" + input,true);
         request.send();
 
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
         request.onreadystatechange = function(){
             if (this.readyState === 4 && this.status === 200){
                 var res = request.responseText;
-                div.textContent = text;
+                div.innerHTML = res;
             }
         }         
     });
