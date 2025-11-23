@@ -1,1 +1,94 @@
 /* Add your own styles */
+body{
+    background-color: #D9D9D9;
+}
+
+button{
+    background-color: rgb(201, 38, 38);
+    border: none;
+    border-radius: 7px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin: 0px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+h1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+}
+
+header{
+    background-color: olive;
+    padding: 25px;
+    text-align: center;
+    color: white;
+}
+
+input{
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 800px;
+    border-radius: 7px;
+    padding: 17px;
+    margin: 0px;
+    font-size: 17px;
+}
+
+main > div#controls{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+main > div#controls > input{
+    padding: 15px;
+    width: 30%;  
+}
+
+main > div#result{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > div#result > table{
+    background-color: white;
+    border-radius: 23px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+main > div#result > table > table,th{
+    background-color: olive;
+    color: white;
+    border-radius: 5px;
+}
+
+main > div#result > table > th, td{
+    padding: 5px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;  
+}
+
+main > div#result > table, th, td{
+    padding: 7px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #D9D9D9;
+    border-collapse: collapse;    
+}
+
+main > div#result > p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color: rgb(201, 38, 38);
+    font-weight: bold;
+    font-size: 24px;
+}

@@ -12,7 +12,11 @@ $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $p
 if (!$cityState):
   $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$query%'");
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  if (empty($results)):
   ?>
+  <p> No countries found! </p>
+  <?php else: ?>
   <table>
     <tr>
       <th>Country Name</th>
@@ -27,13 +31,18 @@ if (!$cityState):
       <td><?= $row['independence_year']; ?></td>
       <td><?= $row['head_of_state']; ?></td>
     </tr>
-  <?php endforeach; ?>
+  <?php endforeach; 
+  endif;?>
   </table>
 <?php
 elseif ($cityState && $query != ""):
   $stmt = $conn->query("SELECT cities.name, cities.district, cities.population FROM cities INNER JOIN countries ON cities.country_code=countries.code WHERE countries.name LIKE '%$query%' ORDER BY cities.name ASC");
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  if (empty($results)):
   ?>
+  <p> No countries found! </p>
+  <?php else: ?>
   <table>
       <tr>
       <th>City Name</th>
@@ -46,7 +55,8 @@ elseif ($cityState && $query != ""):
       <td><?= $row['district']; ?></td>
       <td><?= $row['population']; ?></td>
     </tr>
-  <?php endforeach; ?>
+  <?php endforeach; 
+  endif;?>
   </table>
 <?php
 else:
