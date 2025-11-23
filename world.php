@@ -31,7 +31,7 @@ if (!$cityState):
   </table>
 <?php
 elseif ($cityState && $query != ""):
-  $stmt = $conn->query("SELECT cities.name, cities.district, cities.population FROM cities INNER JOIN countries ON cities.country_code=countries.code WHERE countries.name LIKE '%$query%'");
+  $stmt = $conn->query("SELECT cities.name, cities.district, cities.population FROM cities INNER JOIN countries ON cities.country_code=countries.code WHERE countries.name LIKE '%$query%' ORDER BY cities.name ASC");
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   ?>
   <table>
